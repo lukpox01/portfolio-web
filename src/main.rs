@@ -10,7 +10,7 @@ fn App() -> impl IntoView {
 
     view! {
         <button
-            on:click=move |_| set_count.set(3)
+            on:click=move |_| set_count.set(count.get() + 1)
         >
             "Click me: "
             {count}
