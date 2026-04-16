@@ -1,0 +1,31 @@
+{
+  "name": "Leptos Portfolio (via Feature)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "latest",
+      "profile": "default",
+      "targets": "wasm32-unknown-unknown"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  },
+
+  "postCreateCommand": "cargo install trunk cargo-generate",
+  
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Leptos Dev Server",
+      "onAutoForward": "notify"
+    }
+  }
+}
